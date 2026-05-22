@@ -48,7 +48,8 @@
             contactEmailPlaceholder: 'Your Email',
             contactMessagePlaceholder: 'Your Message',
             ctaSendMessage: 'Send Message',
-            footerCopy: '© 2024 V.GRAPHIKS. All rights reserved.'
+            footerCopy: '© 2024 V.GRAPHIKS. All rights reserved.',
+            footerOwner: 'Diogo "Jiggls" Duarte is the owner of V.GRAPHIKS.'
         },
         pt: {
             navHome: 'Início',
@@ -92,7 +93,8 @@
             contactEmailPlaceholder: 'O seu Email',
             contactMessagePlaceholder: 'A sua Mensagem',
             ctaSendMessage: 'Enviar Mensagem',
-            footerCopy: '© 2024 V.GRAPHIKS. Todos os direitos reservados.'
+            footerCopy: '© 2024 V.GRAPHIKS. Todos os direitos reservados.',
+            footerOwner: 'Diogo "Jiggls" Duarte é o proprietário da V.GRAPHIKS.'
         }
     };
 
