@@ -348,15 +348,6 @@ window.addEventListener('load', () => {
     document.body.style.opacity = '1';
 });
 
-// Parallax effect for hero section
-window.addEventListener('scroll', () => {
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        const scrollPosition = window.pageYOffset;
-        hero.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
-    }
-});
-
 // Add fade-in animation on page load
 window.addEventListener('DOMContentLoaded', () => {
     const elements = document.querySelectorAll('section');
@@ -390,7 +381,5 @@ document.querySelectorAll('.portfolio-item').forEach(item => {
         this.style.transform = 'scale(1)';
     });
 });
-
-console.log('V.GRAPHIKS Website - Modern Design Portfolio Loaded Successfully');
 
 })();
