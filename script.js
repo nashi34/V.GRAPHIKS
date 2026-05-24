@@ -3,7 +3,7 @@
     // Scoped variables and helpers
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('main-nav');
-    const languageSelect = document.getElementById('languageSelect');
+    const languageToggle = document.getElementById('languageToggle');
 
     const translations = {
         en: {
@@ -119,19 +119,21 @@
                 el.setAttribute('aria-label', translations[lang][key]);
             }
         });
+        if (languageToggle) {
+            languageToggle.textContent = lang === 'en' ? 'EN / PT' : 'PT / EN';
+            languageToggle.setAttribute('aria-label', lang === 'en' ? 'Mudar para Português' : 'Switch to English');
+        }
     }
 
     function applySavedLanguage() {
         const savedLang = localStorage.getItem('siteLanguage') || 'en';
-        if (languageSelect) {
-            languageSelect.value = savedLang;
-        }
         translatePage(savedLang);
     }
 
-    if (languageSelect) {
-        languageSelect.addEventListener('change', (e) => {
-            translatePage(e.target.value);
+    if (languageToggle) {
+        languageToggle.addEventListener('click', () => {
+            const currentLang = localStorage.getItem('siteLanguage') || document.documentElement.lang || 'en';
+            translatePage(currentLang === 'en' ? 'pt' : 'en');
         });
     }
 
@@ -187,10 +189,10 @@ const handleScroll = debounce(() => {
     const navbar = document.querySelector('.navbar');
     if (navbar) {
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(15, 15, 35, 0.98)';
-            navbar.style.boxShadow = '0 5px 20px rgba(102, 126, 234, 0.1)';
+            navbar.style.background = 'rgba(7, 26, 61, 0.98)';
+            navbar.style.boxShadow = '0 5px 20px rgba(56, 189, 248, 0.1)';
         } else {
-            navbar.style.background = 'rgba(15, 15, 35, 0.95)';
+            navbar.style.background = 'rgba(7, 26, 61, 0.95)';
             navbar.style.boxShadow = 'none';
         }
     }
@@ -265,7 +267,7 @@ function showNotification(message, type = 'success') {
         right: '20px',
         padding: '15px 25px',
         borderRadius: '8px',
-        backgroundColor: type === 'success' ? '#667eea' : '#f5576c',
+        backgroundColor: type === 'success' ? '#22c55e' : '#ff3b3b',
         color: 'white',
         zIndex: '9999',
         animation: 'slideIn 0.3s ease-out',
